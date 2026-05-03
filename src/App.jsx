@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 
-// ─── DATA ────────────────────────────────────────────────────────────────────
 const response = {
   page: 1,
   results: [
@@ -42,7 +41,6 @@ const response = {
   ],
 };
 
-// ─── PART 1: NAVBAR ──────────────────────────────────────────────────────────
 function Navbar({ active, setActive }) {
   const menus = ["Home", "Profile", "Contact"];
 
@@ -70,7 +68,6 @@ function Navbar({ active, setActive }) {
   );
 }
 
-// ─── PART 2: CARD ────────────────────────────────────────────────────────────
 function Card({ id, title, body, image }) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col hover:shadow-md transition-shadow">
@@ -122,8 +119,6 @@ function CardGrid() {
   );
 }
 
-// ─── PROFILE PAGE ────────────────────────────────────────────────────────────
-function ProfilePage() {
   return (
     <section className="max-w-2xl mx-auto px-6 py-16">
       <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
@@ -193,7 +188,6 @@ function ProfilePage() {
   );
 }
 
-// ─── CONTACT PAGE ────────────────────────────────────────────────────────────
 function ContactPage() {
   return (
     <section className="max-w-lg mx-auto px-6 py-16 text-center">
@@ -202,8 +196,7 @@ function ContactPage() {
         <div
           className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shadow-md"
           style={{
-            background:
-              "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
+            background: "#e5e7eb",
           }}
         >
           📸
@@ -220,10 +213,8 @@ function ContactPage() {
           href="https://www.instagram.com/naylapramesti?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           target="_blank"
           rel="noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white text-sm font-semibold shadow-md transition-opacity hover:opacity-90"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-900 text-white text-sm font-semibold shadow-md transition-opacity hover:opacity-90"
           style={{
-            background:
-              "radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%)",
           }}
         >
           Visit @naylapramesti
@@ -235,7 +226,6 @@ function ContactPage() {
   );
 }
 
-// ─── PART 3: COUNTER (useState + useEffect) ──────────────────────────────────
 function Counter() {
   const [count, setCount] = useState(0);
 
