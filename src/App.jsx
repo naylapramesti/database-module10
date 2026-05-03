@@ -43,7 +43,6 @@ const response = {
 
 function Navbar({ active, setActive }) {
   const menus = ["Home", "Profile", "Contact"];
-
   return (
     <nav className="flex items-center justify-between px-8 py-4 bg-white shadow-sm sticky top-0 z-50">
       <span className="text-xl font-bold tracking-tight text-gray-900">
@@ -71,7 +70,6 @@ function Navbar({ active, setActive }) {
 function Card({ id, title, body, image }) {
   return (
     <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 flex flex-col hover:shadow-md transition-shadow">
-      {/* Image wrapper — guaranteed visible height */}
       <div className="w-full h-48 bg-gray-200 overflow-hidden flex-shrink-0">
         <img
           src={image}
@@ -82,7 +80,6 @@ function Card({ id, title, body, image }) {
           }}
         />
       </div>
-
       <div className="p-5 flex flex-col gap-2 flex-1">
         <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">
           Post #{id}
@@ -103,6 +100,7 @@ function CardGrid() {
     <section className="max-w-6xl mx-auto px-6 py-12">
       <h2 className="text-2xl font-bold text-gray-900 mb-1">Latest Posts</h2>
       <p className="text-sm text-gray-500 mb-8">
+        Responsive grid — try resizing your browser window.
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {response.results.map((item) => (
@@ -119,27 +117,22 @@ function CardGrid() {
   );
 }
 
+function ProfilePage() {
   return (
     <section className="max-w-2xl mx-auto px-6 py-16">
       <div className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
-        {/* Banner */}
         <div className="h-28 bg-gradient-to-r from-gray-800 to-gray-600" />
-
-        {/* Avatar + Info */}
         <div className="px-8 pb-8">
           <div className="w-20 h-20 rounded-full bg-gray-900 flex items-center justify-center text-white text-2xl font-bold border-4 border-white -mt-10 mb-4 shadow-md">
             NP
           </div>
-
           <h2 className="text-2xl font-bold text-gray-900">
             Nayla Pramesti Adhina
           </h2>
           <p className="text-sm text-gray-500 mt-1 mb-6">
             Undergraduate of Computer Engineering
           </p>
-
           <hr className="border-gray-100 mb-6" />
-
           <div className="flex flex-col gap-5">
             <div className="flex items-center gap-3">
               <span className="text-xl">🎂</span>
@@ -152,7 +145,6 @@ function CardGrid() {
                 </p>
               </div>
             </div>
-
             <div className="flex items-center gap-3">
               <span className="text-xl">🎓</span>
               <div>
@@ -164,7 +156,6 @@ function CardGrid() {
                 </p>
               </div>
             </div>
-
             <div className="flex items-center gap-3">
               <span className="text-xl">💼</span>
               <div>
@@ -192,34 +183,26 @@ function ContactPage() {
   return (
     <section className="max-w-lg mx-auto px-6 py-16 text-center">
       <div className="bg-white rounded-3xl shadow-sm border border-gray-100 p-10 flex flex-col items-center gap-6">
-        {/* Instagram-style icon */}
         <div
           className="w-20 h-20 rounded-2xl flex items-center justify-center text-4xl shadow-md"
-          style={{
-            background: "#e5e7eb",
-          }}
+          style={{ background: "#e5e7eb" }}
         >
           📸
         </div>
-
         <div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Contact Me</h2>
           <p className="text-sm text-gray-500">
             Want to get in touch? Feel free to reach out through my Instagram!
           </p>
         </div>
-
         <a
           href="https://www.instagram.com/naylapramesti?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
           target="_blank"
           rel="noreferrer"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gray-900 text-white text-sm font-semibold shadow-md transition-opacity hover:opacity-90"
-          style={{
-          }}
         >
           Visit @naylapramesti
         </a>
-
         <p className="text-xs text-gray-400">Opens Instagram in a new tab</p>
       </div>
     </section>
@@ -229,7 +212,6 @@ function ContactPage() {
 function Counter() {
   const [count, setCount] = useState(0);
 
-  // useEffect: alert fires exactly when count reaches 10
   useEffect(() => {
     if (count === 10) {
       alert("10 is divisible by 5");
@@ -245,16 +227,12 @@ function Counter() {
         <span className="font-semibold text-gray-700">10</span>. Hit{" "}
         <strong>Reset</strong> to start over.
       </p>
-
-      {/* Circle display */}
       <div className="w-36 h-36 rounded-full bg-gray-900 text-white flex flex-col items-center justify-center mx-auto mb-10 shadow-lg">
         <span className="text-5xl font-bold leading-none">{count}</span>
         <span className="text-xs tracking-widest mt-1 text-gray-400 uppercase">
           count
         </span>
       </div>
-
-      {/* Buttons */}
       <div className="flex items-center justify-center gap-4">
         <button
           onClick={() => setCount((c) => c - 1)}
@@ -262,14 +240,12 @@ function Counter() {
         >
           −
         </button>
-
         <button
           onClick={() => setCount(0)}
           className="px-5 py-2 rounded-lg border border-gray-200 text-sm text-gray-500 hover:bg-gray-50 transition-colors"
         >
           Reset
         </button>
-
         <button
           onClick={() => setCount((c) => c + 1)}
           className="w-14 h-14 rounded-full bg-gray-900 text-white text-2xl font-bold hover:bg-gray-700 active:scale-95 transition-all shadow-sm"
@@ -277,7 +253,6 @@ function Counter() {
           +
         </button>
       </div>
-
       <p className="text-xs text-gray-400 mt-6">
         Alert fires when count reaches exactly <strong>10</strong>
       </p>
@@ -285,7 +260,6 @@ function Counter() {
   );
 }
 
-// ─── ROOT APP ────────────────────────────────────────────────────────────────
 export default function App() {
   const [active, setActive] = useState("Home");
 
